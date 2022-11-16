@@ -22,7 +22,8 @@ void init_shell(void)
 		line = get_line();
 		toks_args = get_tokens(line);
 		state = exec_command(toks_args);
-		free(toks_args);
 		free(line);
-	} while (state);
+		free(toks_args);
+	} while (state == 1);
+
 }

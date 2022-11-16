@@ -28,5 +28,6 @@ char *get_line(void)
 		}
 	}
 	return (buffer);
+	free(buffer);
 }
 

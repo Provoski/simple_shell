@@ -12,11 +12,11 @@ int exec_command(char **str);
 int parse_tokens(char **str);
 char *get_line(void);
 int check_alias(char **str);
+char *search_path(char *str);
 
 int my_exit(char **str);
 int my_env(char **str);
 
-int _ls(char **str);
 
 /**
  * struct built_in - for comparing and executing built in commands

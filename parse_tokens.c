@@ -15,11 +15,15 @@
 int parse_tokens(char **str)
 {
 	int fd;
+	char *temp_str;
 	pid_t pid;
 
+	temp_str = str[0];
 	if (str[0] != NULL)
 	{
-		fd = 0;
+		fd = open(str[0], O_RDONLY);
+		if (fd == -1)
+			str[0] = search_path(temp_str);
 		fd = open(str[0], O_RDONLY);
 		if (fd == -1)
 		{

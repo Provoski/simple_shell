@@ -7,7 +7,7 @@
 #include "simple_shell.h"
 
 /**
- * get_tokens - it splint strings og command
+ * get_tokens - it splint strings of command
  * gotten from get_line funtion into array
  * of individual strings using strtok() funtion
  * @str: variable for the collected strings of command

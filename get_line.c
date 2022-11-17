@@ -7,7 +7,7 @@
 #include "simple_shell.h"
 
 /**
- * get_line - get command from the shell using getline function
+ * get_line - get command from the shell using getline function here
  * Return: strings of users command
  */
 char *get_line(void)
@@ -30,5 +30,6 @@ char *get_line(void)
 		}
 	}
 	return (buffer);
+	free(buffer);
 }
 

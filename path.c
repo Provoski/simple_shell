@@ -38,8 +38,8 @@ char *search_path(char *str)
 		if (stat(real_path, &file) >= 0)
 		{
 			return (real_path);
+			free(real_path);
 		}
-		free(real_path);
 	}
 	return (str);
 }

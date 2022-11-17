@@ -14,7 +14,9 @@
 int my_exit(char **str)
 {
 	if (strcmp(str[0], "exit") == 0)
+	{
 		exit(EXIT_SUCCESS);
+	}
 	return (0);
 }
 

@@ -24,5 +24,5 @@ void init_shell(void)
 		state = exec_command(toks_args);
 		free(toks_args);
 		free(line);
-	} while (state);
+	} while (state = 1);
 }

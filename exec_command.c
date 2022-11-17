@@ -35,6 +35,8 @@ int exec_command(char **str)
 		}
 	}
 	if (state != 1)
+	{
 		parse_tokens(str);
+	}
 	return (1);
 }

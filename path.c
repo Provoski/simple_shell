@@ -30,7 +30,7 @@ char *search_path(char *str)
 	for (i = 0; paths[i] != NULL; i++)
 	{
 		len = (strlen(str) + strlen(paths[i]));
-		real_path = malloc(sizeof(char) * (len + 1));
+		real_path = malloc(sizeof(char) * (len));
 		if (!real_path)
 			perror("malloc");
 		strcat(real_path, paths[i]);

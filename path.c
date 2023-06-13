@@ -20,6 +20,7 @@ char *search_path(char *str)
 	int i, len;
 	char *real_path;
 	char *paths[] = {
+		"/bin/sh",
 		"/usr/local/bin/",
 		"/usr/bin/",
 		"/bin/",
@@ -29,12 +30,12 @@ char *search_path(char *str)
 
 	for (i = 0; paths[i] != NULL; i++)
 	{
-		len = (strlen(str) + strlen(paths[i]));
+		len = (_strlen(str) + _strlen(paths[i]));
 		real_path = malloc(sizeof(char) * (len));
 		if (!real_path)
 			perror("malloc");
-		strcat(real_path, paths[i]);
-		strcat(real_path, str);
+		_strcat(real_path, paths[i]);
+		_strcat(real_path, str);
 		if (stat(real_path, &file) >= 0)
 		{
 			return (real_path);

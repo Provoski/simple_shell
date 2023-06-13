@@ -21,15 +21,30 @@ char **get_tokens(char *str)
 	int count;
 
 	count = 0;
-	tokens = malloc(sizeof(char *) * MAX_ARGS);
+	tokens =  malloc(sizeof(char *) * MAX_TOKENS);
 	if (!tokens)
-		perror("ERROR");
+	{
+		perror("error");
+		exit(1);
+	}
 	token  = strtok(str, delim);
 	while (token != NULL)
 	{
-		tokens[count] = token;
-		token = strtok(NULL, delim);
+		/*strcpy(*(tokens + count), token);*/
+		tokens[count] = malloc((_strlen(token) + 1) * sizeof(char));
+		if (!tokens[count])
+		{
+			perror("error");
+			exit(1);
+		}
+		_strcpy(tokens[count], token);
 		count++;
+		if (count > MAX_TOKENS)
+		{
+			perror("error");
+			break;
+		}
+		token = strtok(NULL, delim);
 	}
 	return (tokens);
 }

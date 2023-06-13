@@ -27,11 +27,14 @@ int my_exit(char **str)
  */
 int my_env(char **str)
 {
+	int i;
 	(void)(str);
 
-	for (; *environ; environ++)
+	while (*environ != NULL)
 	{
-		printf("%s\n", *environ);
+		write(1, *environ, strlen(*environ));
+		write(1, "\n", 1);
+		environ++;
 	}
 	return (0);
 }

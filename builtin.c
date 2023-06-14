@@ -27,7 +27,6 @@ int my_exit(char **str)
  */
 int my_env(char **str)
 {
-	int i;
 	(void)(str);
 
 	while (*environ != NULL)

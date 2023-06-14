@@ -15,7 +15,7 @@
  */
 int parse_tokens(char **str)
 {
-	int status, fd;
+	int status;
 	struct stat st;
 	pid_t pid;
 

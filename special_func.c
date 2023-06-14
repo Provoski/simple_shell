@@ -19,6 +19,7 @@ int _getline(char **lineptr, size_t *n, FILE *stream)
 	size_t i;
 
 	i = 0;
+	c = 0;
 	if (buffer == NULL || bufferSize < BUFFER_SIZE)
 	{
 		buffer = (char *)malloc(BUFFER_SIZE);
@@ -26,7 +27,7 @@ int _getline(char **lineptr, size_t *n, FILE *stream)
 			return (-1);
 		bufferSize = BUFFER_SIZE;
 	}
-	while (c = fgetc(stream))
+	while ((c = fgetc(stream)))
 	{
 		if (1 >= bufferSize - 1)
 		{

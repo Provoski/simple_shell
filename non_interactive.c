@@ -17,12 +17,13 @@ int non_interactive(char *command)
 {
 	char **tokens = NULL;
 	size_t command_size;
-	int i, count_tokens, status;
+	int i, count_tokens;
 	char **env = NULL;
 	pid_t pd;
 
 	env = environ;
-	i, count_tokens = 0;
+	i = 0;
+	count_tokens = 0;
 	pd = fork();
 	if (pd == 0)
 	{

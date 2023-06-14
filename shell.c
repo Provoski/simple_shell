@@ -13,13 +13,11 @@
  */
 int main(void)
 {
-	char *command, *command_path;
+	char *command;
 	size_t command_size = 0;
-	int i, count_tokens, status, flag;
 	char **tokens;
 	char *prompt = "($) ";
 
-	i, count_tokens = 0;
 	if (!isatty(STDIN_FILENO))
 	{
 		tokens = get_tokens(command);

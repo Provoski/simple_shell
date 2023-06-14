@@ -14,8 +14,7 @@
  */
 int exec_builtin(char **str)
 {
-	int count, state;
-	pid_t pd;
+	int count;
 	built_in builtin[] = {
 		{"exit", my_exit},
 		{"env", my_env},
